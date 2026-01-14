@@ -39,7 +39,8 @@ function toggleTheme() {
 /**
  * Toggle mobile menu visibility
  */
-function toggleMobileMenu() {
+function toggleMobileMenu(event) {
+  event.stopPropagation()
   hamburger.classList.toggle("active")
   mobileMenu.classList.toggle("active")
 }
@@ -48,16 +49,22 @@ function toggleMobileMenu() {
  * Close mobile menu when clicking outside
  */
 function handleClickOutside(event) {
-  if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+  if (hamburger && mobileMenu && !hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
     hamburger.classList.remove("active")
     mobileMenu.classList.remove("active")
   }
 }
 
-// Event Listeners
-themeToggle.addEventListener("click", toggleTheme)
-hamburger.addEventListener("click", toggleMobileMenu)
+if (themeToggle) {
+  themeToggle.addEventListener("click", toggleTheme)
+}
+
+if (hamburger) {
+  hamburger.addEventListener("click", toggleMobileMenu)
+}
+
 document.addEventListener("click", handleClickOutside)
 
 // Initialize theme on page load
 initTheme()
+  
