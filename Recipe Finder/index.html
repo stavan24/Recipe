@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecipeFinder - Discover Delicious Recipes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🍳</span>
+        <span class="logo-text">RecipeFinder</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="recipe.html" class="nav-link">Recipes</a></li>
+        <li><a href="saved.html" class="nav-link">Saved</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+        <li><a href="recipe.html" class="mobile-nav-link">Recipes</a></li>
+        <li><a href="saved.html" class="mobile-nav-link">Saved</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Discover Your Next <span class="highlight">Favorite Recipe</span></h1>
+        <p class="hero-description">
+          Explore thousands of delicious recipes from around the world. 
+          Save your favorites and cook like a pro with our easy-to-follow instructions.
+        </p>
+        <a href="recipe.html" class="cta-button">
+          Start Exploring
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="hero-image">
+        <div class="hero-card">
+          <img src="/placeholder.svg?height=300&width=400" alt="Delicious food">
+          <div class="hero-card-content">
+            <span class="hero-card-tag">Featured</span>
+            <h3>Fresh & Tasty</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-container">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">Search Recipes</h3>
+          <p class="feature-description">Find recipes by name, ingredient, or cuisine from our extensive database.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3 class="feature-title">Save Favorites</h3>
+          <p class="feature-description">Keep your favorite recipes organized and accessible anytime.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3 class="feature-title">Global Cuisines</h3>
+          <p class="feature-description">Explore dishes from different cultures and expand your culinary horizons.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 RecipeFinder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+</body>
+</html>

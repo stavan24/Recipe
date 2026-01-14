@@ -1,0 +1,63 @@
+/**
+ * Theme management and mobile menu functionality
+ * Handles dark mode toggle and hamburger menu for all pages
+ */
+
+// DOM Elements
+const themeToggle = document.getElementById("themeToggle")
+const hamburger = document.getElementById("hamburger")
+const mobileMenu = document.getElementById("mobileMenu")
+
+/**
+ * Initialize theme from localStorage or system preference
+ */
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme")
+
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme)
+  } else {
+    // Check system preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if (prefersDark) {
+      document.documentElement.setAttribute("data-theme", "dark")
+    }
+  }
+}
+
+/**
+ * Toggle between light and dark themes
+ */
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme")
+  const newTheme = currentTheme === "dark" ? "light" : "dark"
+
+  document.documentElement.setAttribute("data-theme", newTheme)
+  localStorage.setItem("theme", newTheme)
+}
+
+/**
+ * Toggle mobile menu visibility
+ */
+function toggleMobileMenu() {
+  hamburger.classList.toggle("active")
+  mobileMenu.classList.toggle("active")
+}
+
+/**
+ * Close mobile menu when clicking outside
+ */
+function handleClickOutside(event) {
+  if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+    hamburger.classList.remove("active")
+    mobileMenu.classList.remove("active")
+  }
+}
+
+// Event Listeners
+themeToggle.addEventListener("click", toggleTheme)
+hamburger.addEventListener("click", toggleMobileMenu)
+document.addEventListener("click", handleClickOutside)
+
+// Initialize theme on page load
+initTheme()

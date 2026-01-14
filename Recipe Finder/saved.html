@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Recipes - RecipeFinder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🍳</span>
+        <span class="logo-text">RecipeFinder</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="recipe.html" class="nav-link">Recipes</a></li>
+        <li><a href="saved.html" class="nav-link active">Saved</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="recipe.html" class="mobile-nav-link">Recipes</a></li>
+        <li><a href="saved.html" class="mobile-nav-link active">Saved</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="saved-page">
+    <section class="saved-header">
+      <h1 class="page-title">Saved Recipes</h1>
+      <p class="page-subtitle">Your personal collection of favorite recipes</p>
+      <p class="saved-count" id="savedCount"></p>
+    </section>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📚</div>
+      <h3>No saved recipes yet</h3>
+      <p>Start exploring and save your favorite recipes to access them anytime!</p>
+      <a href="recipe.html" class="cta-button">Browse Recipes</a>
+    </div>
+
+    <!-- Saved Recipe Grid -->
+    <div class="recipe-grid saved-grid" id="savedGrid"></div>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="recipeModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-content" id="modalContent">
+        <!-- Modal content will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 RecipeFinder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="saved.js"></script>
+</body>
+</html>

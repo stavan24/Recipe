@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Recipes - RecipeFinder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🍳</span>
+        <span class="logo-text">RecipeFinder</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="recipe.html" class="nav-link active">Recipes</a></li>
+        <li><a href="saved.html" class="nav-link">Saved</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="recipe.html" class="mobile-nav-link active">Recipes</a></li>
+        <li><a href="saved.html" class="mobile-nav-link">Saved</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="recipes-page">
+    <!-- Search Section -->
+    <section class="search-section">
+      <h1 class="page-title">Browse Recipes</h1>
+      <p class="page-subtitle">Search for your favorite dishes or discover something new</p>
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="Search for recipes..."
+          autocomplete="off"
+        >
+        <button class="search-button" id="searchButton">
+          <span>Search</span>
+        </button>
+      </div>
+      <div class="quick-search">
+        <span>Popular:</span>
+        <button class="quick-tag" data-search="chicken">Chicken</button>
+        <button class="quick-tag" data-search="pasta">Pasta</button>
+        <button class="quick-tag" data-search="beef">Beef</button>
+        <button class="quick-tag" data-search="dessert">Dessert</button>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <!-- Loading State -->
+      <div class="loading-state" id="loadingState">
+        <div class="spinner"></div>
+        <p>Finding delicious recipes...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🍽️</div>
+        <h3>No recipes found</h3>
+        <p>Try searching for something else or browse our popular categories above.</p>
+      </div>
+
+      <!-- Initial State -->
+      <div class="initial-state" id="initialState">
+        <div class="initial-icon">👨‍🍳</div>
+        <h3>Ready to cook?</h3>
+        <p>Search for a recipe or click one of the popular tags to get started!</p>
+      </div>
+
+      <!-- Recipe Grid -->
+      <div class="recipe-grid" id="recipeGrid"></div>
+    </section>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="recipeModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-content" id="modalContent">
+        <!-- Modal content will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 RecipeFinder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="recipe.js"></script>
+</body>
+</html>
