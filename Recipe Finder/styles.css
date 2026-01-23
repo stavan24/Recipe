@@ -117,7 +117,6 @@ ul {
    Navigation
    ============================================ */
 .navbar {
-      width: 25rem;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -442,7 +441,6 @@ ul {
   font-size: var(--font-base);
 }
 
-
 /* ============================================
    Recipes Page
    ============================================ */
@@ -470,18 +468,6 @@ ul {
 }
 
 /* Search Section */
-.search-container {
-  max-width: 600px;
-  margin: 0 auto var(--spacing-lg);
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-.recipes-page {
-  max-width: var(--max-width); /* 1200px */
-  padding: var(--spacing-2xl) var(--spacing-lg);
-}
-
 .search-section {
   margin-bottom: var(--spacing-2xl);
 }
@@ -867,7 +853,6 @@ ul {
    Footer
    ============================================ */
 .footer {
-      width: 25rem;
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   padding: var(--spacing-xl) var(--spacing-lg);
