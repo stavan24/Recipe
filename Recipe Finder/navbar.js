@@ -1,10 +1,17 @@
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
 
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+});
+
+/* Dark mode */
 function toggleDark() {
   document.body.classList.toggle("dark");
-  localStorage.setItem("dark", document.body.classList.contains("dark"));
+  localStorage.setItem(
+    "dark",
+    document.body.classList.contains("dark")
+  );
 }
 
 if (localStorage.getItem("dark") === "true") {
